@@ -59,7 +59,7 @@ Test: the laptop is shut and an output still lands.
 Build the 2-engine by 4-layer grid from `references/the-architecture.md`. For each of the eight cells, mark **covered** or **empty**.
 
 - Use the engine tags in `connections.md` (each domain is Growth, Fulfillment, or Both) to decide which engine each Reach and Memory item serves.
-- Use which engine each built skill serves to place Hands and Pulse items.
+- Read the `> **Engine:**` tag near the top of each skill's `SKILL.md` to place Hands and Pulse items by engine. If a skill has no tag, judge by what it does. (The pre-loaded marketing skills are all tagged Growth.)
 - A "Both" tag counts toward both engines for that layer.
 
 ```

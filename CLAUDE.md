@@ -16,9 +16,26 @@ Read `references/engine-model.md`. Every connection and skill serves either the 
 
 ## Your skills
 
+**Core loop**
 - `/onboard`: already run if you are reading this filled in. Re-run any time to refresh from an edited `aios-intake.md`.
 - `/audit`: scores your Value Engine across both engines and all four layers. Run on Day 7, then weekly. Watch the score climb.
 - `/level-up`: weekly Shift, Scope, Ship interview. Find one build, scope it, ship it. One per week.
+
+**Growth Engine (marketing), pre-loaded**
+- `/icp`: build one halo-grade ideal customer profile for one offer.
+- `/customer-research`: mine real customer language into a quote bank and personas.
+- `/competitive-research`: deep competitor and market teardown before any build.
+- `/content-strategy`: pillars, clusters, and a prioritized publishing queue.
+- `/copy`: write, edit, or refresh marketing copy.
+- `/ads`: paid ad campaigns, creative, and A/B tests.
+- `/email`: cold outreach, lifecycle sequences, broadcasts.
+- `/brand-voice`: strip AI tells, match your voice from `references/voice.md`.
+- `/cro`: conversion optimization for pages, flows, popups, paywalls.
+- `/lead-magnets`: email-capture assets and free tools, gated and measured.
+- `/social`: posts, batches, repurposing across platforms.
+- `/pricing`: pricing strategy, tiers, value metrics, page specs.
+
+All twelve are tagged Growth Engine. Your Fulfillment Engine is yours to build. Run `/level-up` to find the next one.
 
 ## Where things live
 
