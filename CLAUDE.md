@@ -23,6 +23,7 @@ Read `references/engine-model.md`. Every connection and skill serves either the 
 
 **Growth Engine (marketing), pre-loaded**
 - `/icp`: build one halo-grade ideal customer profile for one offer.
+- `/offer`: build one irresistible Grand Slam / Godfather offer, scored on Hormozi's Value Equation. Reads `/icp`, writes `context/offer.md`.
 - `/customer-research`: mine real customer language into a quote bank and personas.
 - `/competitive-research`: deep competitor and market teardown before any build.
 - `/content-strategy`: pillars, clusters, and a prioritized publishing queue.
@@ -35,7 +36,7 @@ Read `references/engine-model.md`. Every connection and skill serves either the 
 - `/social`: posts, batches, repurposing across platforms.
 - `/pricing`: pricing strategy, tiers, value metrics, page specs.
 
-All twelve are tagged Growth Engine. Your Fulfillment Engine is yours to build. Run `/level-up` to find the next one.
+All thirteen are tagged Growth Engine. Your Fulfillment Engine is yours to build. Run `/level-up` to find the next one.
 
 ## Where things live
 

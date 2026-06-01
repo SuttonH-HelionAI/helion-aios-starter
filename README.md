@@ -67,9 +67,9 @@ Three core skills run the operating loop. Twelve marketing skills come pre-loade
 
 **Growth Engine pack (marketing)**
 
-Twelve drop-in marketing skills, ready once `/onboard` knows your business:
+Thirteen drop-in marketing skills, ready once `/onboard` knows your business:
 
-`/icp` `/customer-research` `/competitive-research` `/content-strategy` `/copy` `/ads` `/email` `/brand-voice` `/cro` `/lead-magnets` `/social` `/pricing`
+`/icp` `/offer` `/customer-research` `/competitive-research` `/content-strategy` `/copy` `/ads` `/email` `/brand-voice` `/cro` `/lead-magnets` `/social` `/pricing`
 
 Each is tagged to the Growth Engine, so `/audit` counts them in your coverage grid.
 
@@ -104,9 +104,9 @@ helion-aios-starter/
 ├── decisions/log.md          ← append-only record of decisions and why
 ├── audits/                   ← saved audit reports
 ├── archives/                 ← old stuff. Don't delete. Move here.
-└── .claude/skills/        ← 3 core skills + 12 Growth marketing skills
+└── .claude/skills/        ← 3 core skills + 13 Growth marketing skills
     ├── onboard/  audit/  level-up/                          (core loop)
-    ├── icp/  customer-research/  competitive-research/
+    ├── icp/  offer/  customer-research/  competitive-research/
     ├── content-strategy/  copy/  ads/  email/
     └── brand-voice/  cro/  lead-magnets/  social/  pricing/  (Growth Engine)
 ```
