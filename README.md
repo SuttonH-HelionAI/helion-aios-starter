@@ -67,9 +67,9 @@ Three core skills run the operating loop. Twelve marketing skills come pre-loade
 
 **Growth Engine pack (marketing)**
 
-Thirteen drop-in marketing skills, ready once `/onboard` knows your business:
+Fourteen drop-in marketing skills, ready once `/onboard` knows your business:
 
-`/icp` `/offer` `/customer-research` `/competitive-research` `/content-strategy` `/copy` `/ads` `/email` `/brand-voice` `/cro` `/lead-magnets` `/social` `/pricing`
+`/icp` `/offer` `/customer-research` `/competitive-research` `/content-strategy` `/copy` `/ads` `/email` `/brand-voice` `/brand-guidelines` `/cro` `/lead-magnets` `/social` `/pricing`
 
 Each is tagged to the Growth Engine, so `/audit` counts them in your coverage grid.
 
@@ -78,7 +78,7 @@ Each is tagged to the Growth Engine, so `/audit` counts them in your coverage gr
 ## Quick start
 
 1. **Clone** this repo to a folder on your machine.
-2. **Open it in Claude Code** and run `/onboard`. Answer the questions honestly. Paste your writing samples, do not retype them. About 15 minutes.
+2. **Open it in Claude Code** and run `/onboard`. This builds your Foundation: intake, then your buyer, your offer, and your brand, ending with one real deliverable that proves it works. It is resumable, so build it across sittings. This is the deep part. Do not rush it.
 3. **Use it for a week.** Bring real questions. Make real decisions. Log them in `decisions/log.md`.
 4. **Day 7:** run `/audit`. Read the coverage grid. Pick one empty cell.
 5. **Day 14:** run `/level-up`. It scopes one build worth shipping. Build it.
@@ -104,11 +104,11 @@ helion-aios-starter/
 ├── decisions/log.md          ← append-only record of decisions and why
 ├── audits/                   ← saved audit reports
 ├── archives/                 ← old stuff. Don't delete. Move here.
-└── .claude/skills/        ← 3 core skills + 13 Growth marketing skills
+└── .claude/skills/        ← 3 core skills + 14 Growth marketing skills
     ├── onboard/  audit/  level-up/                          (core loop)
     ├── icp/  offer/  customer-research/  competitive-research/
     ├── content-strategy/  copy/  ads/  email/
-    └── brand-voice/  cro/  lead-magnets/  social/  pricing/  (Growth Engine)
+    └── brand-voice/  brand-guidelines/  cro/  lead-magnets/  social/  pricing/  (Growth)
 ```
 
 See `EXPANSIONS.md` for what to add as you outgrow the base.

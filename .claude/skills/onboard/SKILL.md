@@ -1,146 +1,152 @@
 ---
 name: onboard
-description: Day-1 setup wizard for the Helion AIOS. Runs a 7-question interview, then scaffolds the Day-1 file set (context files, voice sample, connections table, and a filled CLAUDE.md). Idempotent and re-runnable. Triggers on "set me up", "onboard me", "/onboard", "fill in my AIOS", or a fresh clone of the starter kit.
+description: Builds the operator's Foundation. A resumable chain that loads the Memory layer deep: intake, then the buyer, the offer, and the brand, ending with one real deliverable that proves it works. Triggers on "set me up", "onboard me", "/onboard", "build my foundation", "fill in my AIOS", or a fresh clone of the starter kit.
 ---
 
-# Onboard: Day-1 setup
+# Onboard: build your Foundation
 
-This is the first thing the operator runs. It captures who they are and what they do, then builds the Memory layer (see `references/the-architecture.md`). Memory is non-skippable. Everything else sits on it.
+This is the deepest and most important thing the operator runs. It is not a quick setup. It is a Foundation: a chain that loads the Memory layer (see `references/the-architecture.md`) so deep that when the operator later asks the OS for real work, it is flawless, because it already knows their buyer, their offer, and their voice cold.
 
-One-time, but safe to re-run. Every run backs up before it writes.
+Depth over speed. This can take a couple of hours. It is resumable. The operator runs it across sittings.
 
-## Step 1, Read the intake, find the gaps
+## How the chain works
 
-`aios-intake.md` (repo root) is the source of truth. Read it.
+Five phases plus a proof step, in order. Each phase writes a canonical file the next phase reads. No skipping ahead: you cannot build an offer without a buyer, or lock a brand without an offer.
 
-If it does not exist, create it from the seed below, then continue. The seed has all seven questions with `[PLACEHOLDER]` answers.
+```
+Phase 1  Intake    -> context/about-me, about-business, priorities, voice, connections
+Phase 2  Evidence  -> real market + customer data (optional, recommended)
+Phase 3  Buyer     -> context/icp.md            (/icp)
+Phase 4  Offer     -> context/offer.md          (/offer)
+Phase 5  Brand     -> references/brand-guidelines.md + voice.md  (/brand-guidelines, /brand-voice)
+Capstone Proof     -> one real flagship deliverable from the full stack
+```
 
-Check each of Q1 through Q7. A question is **filled** if it has a real answer. It is **empty** if the answer is `[PLACEHOLDER]`, blank, or a stub.
+## Resume logic (do this first, every run)
 
-- All seven filled: skip the interview. Go to Step 3 (scaffold).
-- Some filled: list which are empty. Ask the operator which they want to fill now. Interview only those.
-- None filled: run the full interview, Step 2.
+Read `context/.foundation.md` if it exists. It tracks which phases are done.
+- **Missing**: first run. Create it from the template below, all unchecked. Start at Phase 1.
+- **Exists**: resume at the first unchecked phase. Tell the operator where they are: "You are through [N] of 6. Picking up at [phase]."
 
-### Intake seed (write this if `aios-intake.md` is missing)
+After each phase completes, check its box in `context/.foundation.md`, then ask: "Keep going to [next phase] now, or pause here? You can resume any time by running `/onboard`." Honor the answer.
+
+### Status template (`context/.foundation.md`)
 
 ```markdown
-# AIOS Intake, source of truth for /onboard
-
-Edit any answer and re-run /onboard to refresh your files. Keep this honest. The whole system is built on it.
-
-## Q1, Who are you, what do you sell, who do you serve?
-[PLACEHOLDER]
-
-## Q2, Writing samples (paste 1-2 raw, do not retype)
-[PLACEHOLDER]
-
-## Q3, Top 2-3 priorities for the next 90 days (with a number or a deadline)
-[PLACEHOLDER]
-
-## Q4, Where does revenue land and get tracked?
-[PLACEHOLDER]
-
-## Q5, Where do you talk to customers, your team, and the outside world?
-[PLACEHOLDER]
-
-## Q6, Where do meeting recordings, notes, and docs live?
-[PLACEHOLDER]
-
-## Q7, The one task that eats your week, and where you track work?
-[PLACEHOLDER]
+# Foundation status
+- [ ] Phase 1: Intake
+- [ ] Phase 2: Evidence (optional)
+- [ ] Phase 3: Buyer (/icp)
+- [ ] Phase 4: Offer (/offer)
+- [ ] Phase 5: Brand (/brand-guidelines, /brand-voice)
+- [ ] Capstone: Proof
 ```
 
-## Step 2, The interview
+---
 
-Seven questions. ONE AT A TIME. Wait for the answer before asking the next. Write each answer into `aios-intake.md` (replace the `[PLACEHOLDER]`) the moment you get it, before moving on.
+## Phase 1: Intake
 
-**Hard cap at seven. Do not invent a Q8. Do not bundle questions.**
+Capture who they are and what they do. Builds the base of the Memory layer.
 
-**Q1.** Who are you, what do you sell, and who do you serve? One paragraph is enough. Name the offer and the buyer.
+**The intake file.** `aios-intake.md` (repo root) is the source of truth. Read it. If it is missing, create it from the seed in `aios-intake.md`'s structure (seven questions, placeholder answers), then continue.
 
-**Q2.** Paste one or two writing samples. Raw. Pulled straight from a real email you sent or a post you published.
-> HARD RULE: if they type fresh prose into the chat instead of pasting, refuse it. Tell them: "Do not write me something new. Open a real email or post you already sent and paste it raw. The point is to capture how you actually write, not how you write when you know an AI is reading." Do not accept fresh prose as a voice sample.
+**Interview.** Seven questions, ONE AT A TIME. Write each answer into `aios-intake.md` the moment you get it. Hard cap at seven. No Q8. No bundling.
 
-**Q3.** What are your top two or three priorities for the next 90 days?
-> Push back on vague answers. "Grow the business" is not a priority. Make them attach a number or a deadline to each one. "Close 3 clients by August 31" is a priority. Ask again until each one has a number or a date.
+1. Who are you, what do you sell, who do you serve? One paragraph. Name the offer and the buyer.
+2. Paste one or two writing samples, raw, from a real email or post you already sent. HARD RULE: if they type fresh prose instead of pasting, refuse. "Do not write me something new. Paste raw from something you already sent. The point is how you actually write, not how you write for an AI." Never accept fresh prose.
+3. Top two or three priorities for the next 90 days. Push back on vague. Make each one carry a number or a deadline.
+4. Where does revenue land and get tracked? Name the real tools.
+5. Where do you talk to customers, your team, and the outside world?
+6. Where do meeting recordings, notes, and docs live?
+7. The one task that eats your week, and where you track work?
 
-**Q4.** Where does revenue land and get tracked? Name the actual tools (Stripe, Shopify, QuickBooks, a spreadsheet, wherever the money shows up).
+**Scaffold (one batch, back up any existing file to `archives/intake-{date}/` first):**
+1. `context/about-me.md` from Q1 + Q7.
+2. `context/about-business.md` from Q1 + Q4.
+3. `context/priorities.md` from Q3 (numbered, keep numbers and dates).
+4. `references/voice.md` from Q2, pasted verbatim, with a one-line header on how to use it.
+5. `connections.md`, the seven-domain table from Q4 to Q7, each row tagged by engine per `references/the-architecture.md`. Mechanism "not yet connected", auth "none".
+6. `CLAUDE.md`, fill every `{{...}}` placeholder ({{business_name}}, {{your_name}}, {{primary_priority}}, knowledge base, voice summary, connections summary).
 
-**Q5.** Where do you talk to customers, your team, and the outside world? Email, Slack, SMS, DMs, a CRM. List the real channels.
+No `.env` writes. Reach gets wired later.
 
-**Q6.** Where do your meeting recordings, notes, and docs live? Google Drive, Notion, Granola, Fathom, a folder on your desktop. Name it.
+Mark Phase 1 done in `context/.foundation.md`.
 
-**Q7.** What is the one task that eats your week? And where do you track your work (the task list, the project board, the place you look to know what to do next)?
+---
 
-After Q7, stop asking. Move to scaffold.
+## Phase 2: Evidence (optional, recommended)
 
-## Step 3, Scaffold the Day-1 file set
+Before building the buyer and the offer, ground them in real data instead of memory alone.
 
-Build all of the following in ONE batch. Before writing any file that already exists, back it up to `archives/intake-{YYYY-MM-DD}/` first. Then write.
+Offer it: "Want to ground your buyer and offer in real evidence first? I can run `/competitive-research` and `/customer-research`. It adds time, but the ICP and the offer come out far sharper. Skip if you want to move fast."
 
-1. **`context/about-me.md`**, from Q1 (identity and role) and Q7 (biggest time-suck). Who they are, what they do day to day, the task that drains them.
+- **Yes**: run `/competitive-research`, then `/customer-research` (read and follow each skill's `SKILL.md`). They write research files the next phases read.
+- **Skip**: note it and move on.
 
-2. **`context/about-business.md`**, from Q1 (offer and who they serve) and Q4 (revenue model). What the business sells, to whom, and how it makes money.
+Mark Phase 2 done (or note skipped).
 
-3. **`context/priorities.md`**, from Q3. A numbered list. Each priority keeps its number or deadline.
+---
 
-4. **`references/voice.md`**, the Q2 samples, pasted verbatim, unedited. Add one header line at the top: "Voice reference. When writing anything external in my voice, match the register below. Show me a draft before sending." Then the raw samples.
+## Phase 3: Buyer (/icp)
 
-5. **`connections.md`**, the seven-domain table, populated from Q4 through Q7. Tag each row with the engine it serves per the mapping in `references/engine-model.md` and `references/the-architecture.md`. Use this template:
+Announce: "Now we build the one buyer this whole system serves."
 
-```markdown
-# Connections, every system your AIOS can reach
+Run `/icp`: read and follow `.claude/skills/icp/SKILL.md`. It writes `context/icp.md`.
 
-Tagged by engine. Mechanism is how the AIOS reaches it. Run /audit to see coverage and freshness.
+Confirm `context/icp.md` exists and is filled. Mark Phase 3 done.
 
-| # | Domain | System | Engine | Mechanism | Auth |
-|---|---|---|---|---|---|
-| 1 | Revenue and financials | {from Q4} | Growth | not yet connected | none |
-| 2 | Customer interactions | {from Q5} | Growth | not yet connected | none |
-| 3 | Calendar | {if named, else blank} | Both | not yet connected | none |
-| 4 | Communication | {from Q5} | Both | not yet connected | none |
-| 5 | Project and task tracking | {from Q7} | Fulfillment | not yet connected | none |
-| 6 | Meeting intelligence | {from Q6} | Fulfillment | not yet connected | none |
-| 7 | Knowledge and files | {from Q6} | Both | not yet connected | none |
-```
+---
 
-   Fill the System column from the operator's answers. Where a domain was not named, leave System blank but keep the row. Engine tags are fixed as above (the mapping comes from the architecture's seven-domain table). Every Mechanism on Day 1 is "not yet connected" and every Auth is "none". Reach gets wired later, one tool at a time.
+## Phase 4: Offer (/offer)
 
-6. **`CLAUDE.md`**, fill every `{{...}}` placeholder:
-   - `{{business_name}}`, from Q1
-   - `{{your_name}}`, from Q1
-   - `{{primary_priority}}`, the top item from Q3
-   - Knowledge base section, a short paragraph from Q1 and Q3: what they do, who they serve, what matters this quarter
-   - Voice summary, one or two lines describing the register from Q2 (do not paste the full samples here, point to `references/voice.md`)
-   - Connections summary, one line per wired-or-named domain from `connections.md`, tagged by engine
+Announce: "Now we build the offer they would feel stupid saying no to."
 
-Do not write to `.env`. Do not wire any tool. Day 1 is Memory only.
+Run `/offer`: read and follow `.claude/skills/offer/SKILL.md`. It reads `context/icp.md`, scores the Value Equation, stacks the offer, and writes `context/offer.md`.
 
-## Step 4, The closing screen
+Confirm `context/offer.md` exists. Mark Phase 4 done.
 
-Three lines. No more.
+---
 
-```
-Day 1 done. Your Memory layer is built.
-Today: ask me "what should I focus on this week?"
-Tomorrow: wire one tool from connections.md. Day 7: run /audit.
-```
+## Phase 5: Brand
 
-When they run the closing prompt ("what should I focus on this week?"), answer ONLY from the new context files. Do not browse. Do not pad.
+Announce: "Now we lock how the brand looks and sounds. This canon is what every piece of output obeys."
 
-- Three bullets. A priority list, in their voice (match `references/voice.md`).
-- Each bullet ties to one priority from `context/priorities.md` (Q3).
-- The final line names the single thing to do Monday, then asks the Shift question: "To what extent could AI carry this?"
+1. Run `/brand-guidelines` in build mode: read and follow `.claude/skills/brand-guidelines/SKILL.md`. It reads the buyer, offer, and voice, and writes `references/brand-guidelines.md`.
+2. Run `/brand-voice`: read and follow `.claude/skills/brand-voice/SKILL.md` to lock the voice from `references/voice.md`.
 
-That last question is not filler. It plants the Brain's Shift habit (see `references/the-brain.md`) before `/level-up` ever teaches it formally.
+Confirm `references/brand-guidelines.md` exists. Mark Phase 5 done.
+
+---
+
+## Capstone: prove it
+
+Announce: "Your Memory is loaded. Let's prove it. I will make one real thing from everything we built."
+
+Offer one flagship deliverable, operator's pick:
+- a homepage hero section (run `/copy`), or
+- a hero ad (run `/ads`), or
+- a launch email (run `/email`).
+
+Run the chosen skill. It reads `context/icp.md`, `context/offer.md`, `references/brand-guidelines.md`, and `references/voice.md`, and produces a real draft. Show it.
+
+Land it: "You gave me one line of intent and got that, because the OS knows your buyer, your offer, and your voice. That is the Foundation. Every skill works like this now."
+
+Mark Capstone done.
+
+---
+
+## Close
+
+- Update the Knowledge base section of `CLAUDE.md` to point at the canon: `context/icp.md` (buyer), `context/offer.md` (offer), `references/brand-guidelines.md` (brand), `references/voice.md` (voice).
+- Run `/audit` so they see the Memory layer filled and the coverage grid.
+- One line: "Foundation built. Run `/audit` weekly. Run `/level-up` to start building your Fulfillment Engine, the side this kit does not pre-load."
 
 ## Critical rules
 
-- Seven-question cap is non-negotiable. No Q8.
-- The voice paste (Q2) cannot be skipped or faked. Refuse fresh prose.
-- The scaffold is one shot. All six artifacts in one batch.
-- Idempotent. Back up any existing file to `archives/intake-{date}/` before overwriting.
-- The closing screen is three lines.
-- Do not generate extra skills. The kit ships with three.
-- The three `references/*.md` framework files (engine-model, the-brain, the-architecture) are read-only. They ship with the kit. Never edit them.
-- No `.env` writes on Day 1.
+- The chain is ordered. Never run a later phase before its inputs exist.
+- Each phase invokes its skill by reading and following that skill's `SKILL.md`. Do not reimplement those skills here.
+- Resumable. Always read `context/.foundation.md` first and resume from the first unchecked phase.
+- Phase 1 intake: seven-question cap, voice paste cannot be faked, back up before overwriting.
+- Confirm before each phase. The operator can pause and resume any time.
+- The three framework files in `references/` (engine-model, the-brain, the-architecture) are read-only.
+- No `.env` writes during onboarding. Reach gets wired later via `/level-up`.

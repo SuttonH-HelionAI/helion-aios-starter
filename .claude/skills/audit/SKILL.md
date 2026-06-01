@@ -25,13 +25,13 @@ Use the "in place when" tests from `references/the-architecture.md` as the stand
 ## Score the four layers, 25 each, 100 total
 
 ### Memory (25): knows you and the business
-- Operating manual (`CLAUDE.md`) is substantive, placeholders filled (8)
-- Identity and voice captured (`context/about-me.md`, `references/voice.md`) (6)
-- Context files filled (`about-business.md`, `priorities.md`) (5)
-- Decisions logged (`decisions/log.md` has real entries) (3)
-- References exist beyond the three shipped frameworks (3)
+- Operating manual (`CLAUDE.md`) is substantive, placeholders filled (5)
+- Identity and voice captured (`context/about-me.md`, `references/voice.md`) (4)
+- Business and priorities filled (`about-business.md`, `priorities.md`) (4)
+- Foundation canon, the deep Memory: `context/icp.md` (4), `context/offer.md` (4), `references/brand-guidelines.md` (2)
+- Decisions logged (`decisions/log.md` has real entries) (2)
 
-Test: a fresh session answers "what does this business do and who works here?" with no browsing and no paste.
+Test: a fresh session answers "what does this business do and who works here?" with no browsing and no paste. A deep Memory also answers "who is our buyer and what is our offer?" straight from `context/icp.md` and `context/offer.md`. That depth is what the Foundation (`/onboard`) builds.
 
 ### Reach (25): touches your live data
 - The seven domains in `connections.md`, ~3.5 points per domain reachable. Cap the raw domain count at ~14 points.
