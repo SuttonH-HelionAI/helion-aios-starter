@@ -12,6 +12,7 @@ It walks the Brain (`references/the-brain.md`): Shift to find the candidate, Sco
 ## What you read first
 
 - `context/priorities.md` (what matters this quarter)
+- `context/business-map.md` (the seven buckets: each bucket's time-sink, the wished-for hand-off, and its priority. This is your standing build queue, start SHIFT here.)
 - `context/about-me.md` (the time-suck, who they are)
 - `connections.md` (what is reachable, tagged by engine)
 - `references/the-brain.md` (the three moves, the rules)
