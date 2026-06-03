@@ -4,6 +4,8 @@ This is the file `/onboard` reads to build your AIOS. Fill it in any way you lik
 
 Seven questions. Each one answerable in under 60 seconds. Do not overthink them. The first version is enough. You will refine as the system learns you.
 
+Questions 4 to 7 sketch the data side of your business. They feed the full **seven-bucket map** (Revenue, Customer, Calendar, Comms, Tasks, Meetings, Knowledge) that lives in `context/business-map.md`. `/onboard` drafts that map from these answers, then you fill the gaps, like your calendar, one bucket at a time. See `references/the-seven-buckets.md`.
+
 ---
 
 ## Q1. Who are you, what do you sell, who do you sell it to?
@@ -78,4 +80,4 @@ The biggest time-suck, plus where your to-dos and projects live. ClickUp, Asana,
 
 ---
 
-When this is filled, run `/onboard`. It scaffolds your Day-1 set: your `context/` files, `references/voice.md`, `connections.md`, and a filled-in `CLAUDE.md`. Edit this file and re-run `/onboard` any time to refresh.
+When this is filled, run `/onboard`. It scaffolds your Day-1 set: your `context/` files, `context/business-map.md` (your seven buckets), `references/voice.md`, `connections.md`, and a filled-in `CLAUDE.md`. Edit this file and re-run `/onboard` any time to refresh.

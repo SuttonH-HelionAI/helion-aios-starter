@@ -10,6 +10,8 @@ Read `references/the-brain.md` once. It is how {{your_name}} works with AI: **Sh
 
 Read `references/the-architecture.md`. The AIOS is a **Value Engine** built as two engines, **Growth** and **Fulfillment**, each through four layers: **Memory** (knows you), **Reach** (touches your data), **Hands** (does the work), **Pulse** (runs on its own). Build order: Memory first, then Reach and Hands, then Pulse.
 
+Reach connects the **seven buckets** every business runs on, Revenue, Customer, Calendar, Comms, Tasks, Meetings, Knowledge (see `references/the-seven-buckets.md`). They are mapped in `context/business-map.md` and wired in `connections.md`, one bucket at a time.
+
 ## The lens: the Engine Model
 
 Read `references/engine-model.md`. Every connection and skill serves either the **Growth Engine** (get and grow revenue) or the **Fulfillment Engine** (deliver and keep the promise). When you build or suggest a build, name which engine it serves. If it serves neither, say so.
@@ -41,8 +43,8 @@ All fourteen are tagged Growth Engine. Your Fulfillment Engine is yours to build
 
 ## Where things live
 
-- `context/`: about you, your business, your priorities (filled by `/onboard`)
-- `references/`: the three frameworks, your voice sample, API guides as you wire tools
+- `context/`: about you, your business, your priorities, and `business-map.md` (your seven buckets), filled by `/onboard`
+- `references/`: the frameworks (Brain, Architecture, Engine Model, the Seven Buckets), your voice sample, API guides as you wire tools
 - `connections.md`: every system your AIOS can reach, tagged by engine
 - `decisions/log.md`: append-only record of decisions and why
 - `audits/`: saved `/audit` reports, so you can track the score over time

@@ -28,23 +28,23 @@ Everything else sits on this. A system with no memory answers like a stranger. A
 
 **In place when:** a fresh session answers *"what does this business do and who works here?"* with no browsing and no paste.
 
-Lives in: `context/`, `CLAUDE.md`, `decisions/log.md`, `references/`.
+Lives in: `context/` (including `context/business-map.md`, your seven buckets mapped), `CLAUDE.md`, `decisions/log.md`, `references/`.
 
 ## Layer 2: REACH (touches your live data)
 
 What the AIOS can pull from and act on. Your tools, your accounts, your live data. The important data is not on the public web. It is locked inside your tools. Reach is how the system gets to it.
 
-The seven domains every business runs on:
+The **seven buckets** every business runs on (the full map is in `references/the-seven-buckets.md`):
 
-| # | Domain | Engine it usually feeds |
+| # | Bucket | Engine it usually feeds |
 |---|---|---|
-| 1 | Revenue and financials | Growth |
-| 2 | Customer interactions | Growth |
+| 1 | Revenue | Growth |
+| 2 | Customer | Growth |
 | 3 | Calendar | Both |
-| 4 | Communication | Both |
-| 5 | Project and task tracking | Fulfillment |
-| 6 | Meeting intelligence | Fulfillment |
-| 7 | Knowledge and files | Both |
+| 4 | Comms | Both |
+| 5 | Tasks | Fulfillment |
+| 6 | Meetings | Fulfillment |
+| 7 | Knowledge | Both |
 
 **In place when:** *"what is due tomorrow and what came in today?"* returns live data, no copy-paste.
 

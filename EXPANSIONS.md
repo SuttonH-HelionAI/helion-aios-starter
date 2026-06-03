@@ -10,8 +10,8 @@ The base. Every one of these earns its place on Day 1. Do not delete them.
 
 | Path | What it holds |
 |---|---|
-| `context/` | About you, your business, your priorities. The Memory layer. |
-| `references/` | The frameworks, your voice sample, API guides as you wire tools. |
+| `context/` | About you, your business, your priorities, and `business-map.md` (your seven buckets). The Memory layer. |
+| `references/` | The frameworks (Brain, Architecture, Engine Model, the Seven Buckets), your voice sample, API guides as you wire tools. |
 | `decisions/log.md` | Append-only record of decisions and why. |
 | `audits/` | Saved `/audit` reports, so you track the score over time. |
 | `archives/` | Old stuff. Never delete. Move here. |
