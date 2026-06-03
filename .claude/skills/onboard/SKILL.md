@@ -54,7 +54,7 @@ Capture who they are and what they do. Builds the base of the Memory layer.
 
 **Interview.** Seven questions, ONE AT A TIME. Write each answer into `aios-intake.md` the moment you get it. Hard cap at seven. No Q8. No bundling.
 
-1. Who are you, what do you sell, who do you serve? One paragraph. Name the offer and the buyer.
+1. Who are you, what do you sell, who do you serve, and what is your website? One paragraph plus the URL. Name the offer and the buyer. If they have no site yet, accept "none yet" and move on. Capture the website first, it is the single highest-leverage input for the phases that follow.
 2. Paste one or two writing samples, raw, from a real email or post you already sent. HARD RULE: if they type fresh prose instead of pasting, refuse. "Do not write me something new. Paste raw from something you already sent. The point is how you actually write, not how you write for an AI." Never accept fresh prose.
 3. Top two or three priorities for the next 90 days. Push back on vague. Make each one carry a number or a deadline.
 4. Where does revenue land and get tracked? Name the real tools.
@@ -64,7 +64,7 @@ Capture who they are and what they do. Builds the base of the Memory layer.
 
 **Scaffold (one batch, back up any existing file to `archives/intake-{date}/` first):**
 1. `context/about-me.md` from Q1 + Q7.
-2. `context/about-business.md` from Q1 + Q4.
+2. `context/about-business.md` from Q1 + Q4, including the **website URL** on its own line. If they gave a website, fetch it now with **WebFetch** and pull what they sell, their positioning, their proof, and the words they use into `context/about-business.md`. Do this before any later phase. It is the strongest grounding for the ICP and the brand. If the site is thin or missing, note that and move on.
 3. `context/priorities.md` from Q3 (numbered, keep numbers and dates).
 4. `references/voice.md` from Q2, pasted verbatim, with a one-line header on how to use it.
 5. `connections.md`, the seven-bucket table, each row tagged by engine per `references/the-architecture.md`. Leave the Tool column empty for now; Phase 2 fills it from the business map. Mechanism "not yet connected", auth "none".
@@ -113,13 +113,15 @@ Mark Phase 3 done (or note skipped).
 
 ---
 
-## Phase 4: Buyer (/icp)
+## Phase 4 (required): Buyer (/icp)
 
-Announce: "Now we build the one buyer this whole system serves."
+This phase is required, not optional. The whole system serves one buyer, and every phase after it (offer, brand, the proof piece, and every Growth skill) reads `context/icp.md`. You cannot skip it or move past it. If the operator asks to skip, explain plainly that nothing downstream works without it, and stay on this phase until it is done. Pausing and resuming is fine; skipping is not.
 
-Run `/icp`: read and follow `.claude/skills/icp/SKILL.md`. It writes `context/icp.md`.
+Announce: "Now we build the one buyer this whole system serves. This one is not optional, everything else is built on it."
 
-Confirm `context/icp.md` exists and is filled. Mark Phase 4 done.
+Run `/icp`: read and follow `.claude/skills/icp/SKILL.md`. Hand it the website findings already saved in `context/about-business.md` so the profile is grounded in real language, not guesses. It writes `context/icp.md`.
+
+Confirm `context/icp.md` exists and is genuinely filled, not a placeholder or a thin sketch. Only then mark Phase 4 done.
 
 ---
 

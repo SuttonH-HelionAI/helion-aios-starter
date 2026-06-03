@@ -8,9 +8,9 @@ Questions 4 to 7 sketch the data side of your business. They feed the full **sev
 
 ---
 
-## Q1. Who are you, what do you sell, who do you sell it to?
+## Q1. Who are you, what do you sell, who do you sell it to, and what is your website?
 
-Your name, your business, your offer, and the person you serve. One or two sentences each is plenty.
+Your name, your business, your offer, the person you serve, and your website URL. One or two sentences each is plenty. The website matters most: the AIOS reads it early to ground your ICP and your brand in real language. No site yet? Write "none yet."
 
 ```
 [Your answer here]
