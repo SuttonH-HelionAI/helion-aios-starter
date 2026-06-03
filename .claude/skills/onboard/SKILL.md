@@ -9,6 +9,16 @@ This is the deepest and most important thing the operator runs. It is not a quic
 
 Depth over speed. This can take a couple of hours. It is resumable. The operator runs it across sittings.
 
+## The depth standard (every phase obeys this)
+
+Shallow Memory is the only way this fails. Generic in, generic out. Hold this bar and the operator ends with an OS that knows them cold.
+
+- **No placeholders.** Never leave `{{...}}`, "TBD", or a vague stub in a file. Get the real answer first.
+- **Push back on vague.** "Grow the business" is not a priority; "20 clients by Sept 30" is. "Busy founders" is not a buyer; a named role with a named pain is. One sharp follow-up whenever an answer is thin.
+- **Use the real source.** Their site, their numbers, their real customer language, their named competitors. Fetch and read before you write. Guessing is what makes a generic OS.
+- **Specifics only.** Names, numbers, dates, verbatim phrases. If a line could describe any business in their category, rewrite it until it could only be them.
+- **Verify before you check the box.** Re-read the file you wrote. Substantive and specific, or filler? Fix filler before marking the phase done. A checked box on thin work is worse than an honest gap.
+
 ## How the chain works
 
 Six phases plus a proof step, in order. Each phase writes a canonical file the next phase reads. No skipping ahead: you cannot build an offer without a buyer, or lock a brand without an offer.
@@ -16,7 +26,7 @@ Six phases plus a proof step, in order. Each phase writes a canonical file the n
 ```
 Phase 1  Intake    -> context/about-me, about-business, priorities, voice, connections (skeleton)
 Phase 2  Map       -> context/business-map.md (seven buckets) + connections.md tools  (the-seven-buckets)
-Phase 3  Evidence  -> real market + customer data (optional, recommended)
+Phase 3  Evidence  -> named competitors + real customer language (grounds the ICP)
 Phase 4  Buyer     -> context/icp.md            (/icp)
 Phase 5  Offer     -> context/offer.md          (/offer)
 Phase 6  Brand     -> references/brand-guidelines.md + voice.md  (/brand-guidelines, /brand-voice)
@@ -29,7 +39,7 @@ Read `context/.foundation.md` if it exists. It tracks which phases are done.
 - **Missing**: first run. Create it from the template below, all unchecked. Start at Phase 1.
 - **Exists**: resume at the first unchecked phase. Tell the operator where they are: "You are through [N] of 7. Picking up at [phase]."
 
-After each phase completes, check its box in `context/.foundation.md`, then ask: "Keep going to [next phase] now, or pause here? You can resume any time by running `/onboard`." Honor the answer.
+After each phase completes, check its box in `context/.foundation.md`, mark the win out loud ("That is [N] of 7 done"), then ask: "Keep going to [next phase] now, or pause here? You can resume any time by running `/onboard`, and it picks up exactly here." Honor the answer. The chain is long on purpose; keep the operator moving with small wins, not pressure.
 
 ### Status template (`context/.foundation.md`)
 
@@ -37,7 +47,7 @@ After each phase completes, check its box in `context/.foundation.md`, then ask:
 # Foundation status
 - [ ] Phase 1: Intake
 - [ ] Phase 2: Map your business (the seven buckets)
-- [ ] Phase 3: Evidence (optional)
+- [ ] Phase 3: Evidence (ground the buyer)
 - [ ] Phase 4: Buyer (/icp)
 - [ ] Phase 5: Offer (/offer)
 - [ ] Phase 6: Brand (/brand-guidelines, /brand-voice)
@@ -52,7 +62,7 @@ Capture who they are and what they do. Builds the base of the Memory layer.
 
 **The intake file.** `aios-intake.md` (repo root) is the source of truth. Read it. If it is missing, create it from the seed in `aios-intake.md`'s structure (seven questions, placeholder answers), then continue.
 
-**Interview.** Seven questions, ONE AT A TIME. Write each answer into `aios-intake.md` the moment you get it. Hard cap at seven. No Q8. No bundling.
+**Interview.** Walk the seven core questions, ONE AT A TIME, writing each answer into `aios-intake.md` the moment you get it. The seven are the spine, not a ceiling: when an answer is thin or high-value, ask one sharp follow-up before moving on (the depth standard applies). Do not bundle questions, and do not interrogate, probe only where it raises quality.
 
 1. Who are you, what do you sell, who do you serve, and what is your website? One paragraph plus the URL. Name the offer and the buyer. If they have no site yet, accept "none yet" and move on. Capture the website first, it is the single highest-leverage input for the phases that follow.
 2. Paste one or two writing samples, raw, from a real email or post you already sent. HARD RULE: if they type fresh prose instead of pasting, refuse. "Do not write me something new. Paste raw from something you already sent. The point is how you actually write, not how you write for an AI." Never accept fresh prose.
@@ -63,8 +73,8 @@ Capture who they are and what they do. Builds the base of the Memory layer.
 7. The one task that eats your week, and where you track work?
 
 **Scaffold (one batch, back up any existing file to `archives/intake-{date}/` first):**
-1. `context/about-me.md` from Q1 + Q7.
-2. `context/about-business.md` from Q1 + Q4, including the **website URL** on its own line. If they gave a website, fetch it now with **WebFetch** and pull what they sell, their positioning, their proof, and the words they use into `context/about-business.md`. Do this before any later phase. It is the strongest grounding for the ICP and the brand. If the site is thin or missing, note that and move on.
+1. `context/about-me.md` from Q1 + Q7, plus their **why and point of view**. If it is not already clear, ask one short question: "In a line or two, why do you do this, and what do you believe about your space that most others get wrong?" Capture it verbatim. This is what makes later content sound like a person, not a brand.
+2. `context/about-business.md` from Q1 + Q4, including the **website URL** on its own line. If they gave a website, **fetch it now with WebFetch, and not just the homepage**: pull the home, about, pricing, and product or services pages, plus their most prominent piece of content. From those, write into `context/about-business.md`: what they sell with the full offer or product list and prices, their positioning and proof, the exact words and phrases they use (for voice), and a one-line **business type** (services, ecommerce, creator, agency, local, or other, inferred from the site and Q1, confirmed with the operator). Business type tailors the ICP, the offer, and the proof piece, so set it now. This is the strongest grounding in the whole chain, so go deep. If the site is thin or missing, say so and capture the same facts by asking.
 3. `context/priorities.md` from Q3 (numbered, keep numbers and dates).
 4. `references/voice.md` from Q2, pasted verbatim, with a one-line header on how to use it.
 5. `connections.md`, the seven-bucket table, each row tagged by engine per `references/the-architecture.md`. Leave the Tool column empty for now; Phase 2 fills it from the business map. Mechanism "not yet connected", auth "none".
@@ -100,16 +110,18 @@ Mark Phase 2 done in `context/.foundation.md`.
 
 ---
 
-## Phase 3: Evidence (optional, recommended)
+## Phase 3: Evidence (ground the buyer in reality)
 
-Before building the buyer and the offer, ground them in real data instead of memory alone.
+The next phase, the ICP, is required, and an ICP built from memory alone is a guess. This phase grounds it in real data. No API key to set up: `/competitive-research` and `/customer-research` now run on built-in web search.
 
-Offer it: "Want to ground your buyer and offer in real evidence first? I can run `/competitive-research` and `/customer-research`. It adds time, but the ICP and the offer come out far sharper. Skip if you want to move fast."
+Offer the full pass: "Want the deep version? I run `/competitive-research` and `/customer-research` first. It adds time, but your ICP and offer come out grounded in real competitor moves and real customer language. Or I do a quick scan and we keep moving."
 
-- **Yes**: run `/competitive-research`, then `/customer-research` (read and follow each skill's `SKILL.md`). They write research files the next phases read.
-- **Skip**: note it and move on.
+- **Deep**: run `/competitive-research`, then `/customer-research` (read and follow each skill's `SKILL.md`). They write research files the next phases read.
+- **Quick (the minimum, never fully skip)**: do a short built-in web scan yourself with WebSearch. Capture the names of 2 to 3 real competitors and 3 to 5 verbatim phrases real customers use for this problem (pulled from reviews, forums, social). Save them to `research/quick-scan-{date}.md`. The ICP reads this.
 
-Mark Phase 3 done (or note skipped).
+Grounding is not optional, only its depth is. Never let the ICP run on memory alone.
+
+Mark Phase 3 done.
 
 ---
 
@@ -148,16 +160,18 @@ Confirm `references/brand-guidelines.md` exists. Mark Phase 6 done.
 
 ## Capstone: prove it
 
-Announce: "Your Memory is loaded. Let's prove it. I will make one real thing from everything we built."
+Announce: "Your Memory is loaded. Let's prove it. I will make one real thing from everything we built, aimed at your number-one priority."
 
-Offer one flagship deliverable, operator's pick:
+Pick the deliverable that serves their top priority in `context/priorities.md`, operator's choice from:
 - a homepage hero section (run `/copy`), or
 - a hero ad (run `/ads`), or
 - a launch email (run `/email`).
 
 Run the chosen skill. It reads `context/icp.md`, `context/offer.md`, `references/brand-guidelines.md`, and `references/voice.md`, and produces a real draft. Show it.
 
-Land it: "You gave me one line of intent and got that, because the OS knows your buyer, your offer, and your voice. That is the Foundation. Every skill works like this now."
+**Then run the teammate test.** This is the litmus test, lived. Ask the OS a real question only a teammate would know, like "what is our sharpest angle against [competitor]?" or "who exactly do we serve and what do they say their problem is?" Answer it from the Memory you just built, and cite the file. If the answer is sharp and sourced, the Foundation took. If it is thin, the Memory is thin, go back and deepen the weak file before you close.
+
+Land it: "You gave me one line of intent and got a real draft, and I just answered a real question about your business from memory. That is the Foundation. Every skill works like this now."
 
 Mark Capstone done.
 
@@ -167,7 +181,8 @@ Mark Capstone done.
 
 - Update the Knowledge base section of `CLAUDE.md` to point at the canon: `context/icp.md` (buyer), `context/offer.md` (offer), `references/brand-guidelines.md` (brand), `references/voice.md` (voice).
 - Run `/audit` so they see the Memory layer filled and the coverage grid.
-- One line: "Foundation built. Run `/audit` weekly. Run `/level-up` to start building your Fulfillment Engine, the side this kit does not pre-load."
+- **Hand them their first week.** From `context/priorities.md` and the highest-priority buckets in `context/business-map.md`, write a short, concrete plan into `context/first-week.md`: day by day, what to run and which bucket it serves. Make day one a single winnable build, not a list. This turns "what do I do now?" into a clear next step.
+- One line: "Foundation built, and your first week is in `context/first-week.md`. Run `/audit` weekly. Run `/level-up` to start building your Fulfillment Engine, the side this kit does not pre-load."
 
 ## Critical rules
 
