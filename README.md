@@ -6,6 +6,21 @@ Clone it, run `/onboard`, and the kit personalizes to you. Then two weekly skill
 
 ---
 
+## Open the kit (read this first)
+
+This kit is a folder of files. Claude Code only sees them when you open **this exact folder** as your workspace. Get this right and everything works. Get it wrong and you will see "Unknown command."
+
+1. **Download and unzip.** The ZIP unpacks to a folder named **`helion-aios-starter-main`**. That folder is the kit.
+2. **Open that folder, not the one above it.** In VS Code: **File → Open Folder →** select **`helion-aios-starter-main`**. The list on the left should show `CLAUDE.md` and a `.claude` folder at the very top. If instead you see a single `helion-aios-starter-main` folder you have to click into, you opened the parent (like Downloads). Go back and open the inner folder.
+3. **In VS Code, reload the window.** Press **Cmd+Shift+P** (Mac) or **Ctrl+Shift+P** (Windows), type **Reload Window**, press Enter. This is what loads the commands. Opening a new chat is not enough.
+4. **Type `/onboard`.** Type `/` first and you should see `onboard`, `audit`, `copy`, and more in the list.
+
+**If `/onboard` says "Unknown command":** you opened the wrong folder (the parent) or skipped the reload. Open the folder that holds this README, reload the window, and try again.
+
+On the terminal version of Claude Code the same rule applies: run `claude` from inside the `helion-aios-starter-main` folder.
+
+---
+
 ## The litmus test
 
 > **While you are away from your desk, your AIOS observes one real event and produces an output that is faster and more accurate than what you would make yourself.**
@@ -77,8 +92,8 @@ Each is tagged to the Growth Engine, so `/audit` counts them in your coverage gr
 
 ## Quick start
 
-1. **Clone** this repo to a folder on your machine.
-2. **Open it in Claude Code** and run `/onboard`. This builds your Foundation: intake, then your buyer, your offer, and your brand, ending with one real deliverable that proves it works. It is resumable, so build it across sittings. This is the deep part. Do not rush it.
+1. **Open the kit.** Follow "Open the kit (read this first)" above: download or clone, open the `helion-aios-starter-main` folder, reload the window.
+2. **Send any message.** On a fresh kit, your first message auto-starts onboarding (or run `/onboard` yourself). It builds your Foundation: intake, then your business mapped across the seven buckets, then your buyer, your offer, and your brand, ending with one real deliverable that proves it works. It is resumable, so build it across sittings. This is the deep part. Do not rush it.
 3. **Use it for a week.** Bring real questions. Make real decisions. Log them in `decisions/log.md`.
 4. **Day 7:** run `/audit`. Read the coverage grid. Pick one empty cell.
 5. **Day 14:** run `/level-up`. It scopes one build worth shipping. Build it.
@@ -104,11 +119,13 @@ helion-aios-starter/
 ├── decisions/log.md          ← append-only record of decisions and why
 ├── audits/                   ← saved audit reports
 ├── archives/                 ← old stuff. Don't delete. Move here.
-└── .claude/skills/        ← 3 core skills + 14 Growth marketing skills
-    ├── onboard/  audit/  level-up/                          (core loop)
-    ├── icp/  offer/  customer-research/  competitive-research/
-    ├── content-strategy/  copy/  ads/  email/
-    └── brand-voice/  brand-guidelines/  cro/  lead-magnets/  social/  pricing/  (Growth)
+└── .claude/
+    ├── commands/             ← typeable /commands, one per skill (works on any Claude Code version)
+    └── skills/               ← 3 core skills + 14 Growth marketing skills (the logic)
+        ├── onboard/  audit/  level-up/                      (core loop)
+        ├── icp/  offer/  customer-research/  competitive-research/
+        ├── content-strategy/  copy/  ads/  email/
+        └── brand-voice/  brand-guidelines/  cro/  lead-magnets/  social/  pricing/  (Growth)
 ```
 
 See `EXPANSIONS.md` for what to add as you outgrow the base.
